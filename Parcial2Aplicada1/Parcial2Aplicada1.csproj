@@ -91,6 +91,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Parcial2DBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consulta\ConsultaEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consulta\ConsultaEmpleados.Designer.cs">
+      <DependentUpon>ConsultaEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Consulta\ConsultaEmpleados.resx">
+      <DependentUpon>ConsultaEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>

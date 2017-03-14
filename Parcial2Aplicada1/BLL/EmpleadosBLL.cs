@@ -3,6 +3,7 @@ using Parcial2Aplicada1.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -79,6 +80,13 @@ namespace Parcial2Aplicada1.BLL
             using (var db = new Repositorio<Empleado>())
             {
                 return db.GetList();
+            }
+        }
+        public static List<Empleado> GetListWhere(Expression<Func<Empleado, bool>> criterio)
+        {
+            using (var db = new Repositorio<Empleado>())
+            {
+                return db.GetListWhere(criterio);
             }
         }
     }

@@ -48,6 +48,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleadoRetencionesDetalle)).BeginInit();
@@ -57,7 +59,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrosToolStripMenuItem});
+            this.registrosToolStripMenuItem,
+            this.consultaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(645, 24);
@@ -124,7 +127,7 @@
             // 
             // buttonBuscarDetalle
             // 
-            this.buttonBuscarDetalle.Location = new System.Drawing.Point(182, 19);
+            this.buttonBuscarDetalle.Location = new System.Drawing.Point(251, 17);
             this.buttonBuscarDetalle.Name = "buttonBuscarDetalle";
             this.buttonBuscarDetalle.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscarDetalle.TabIndex = 9;
@@ -228,6 +231,20 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Retenciones";
             // 
+            // consultaToolStripMenuItem
+            // 
+            this.consultaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.empleadosToolStripMenuItem});
+            this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.consultaToolStripMenuItem.Text = "Consulta";
+            // 
+            // empleadosToolStripMenuItem
+            // 
+            this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.empleadosToolStripMenuItem.Text = "Empleados";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,6 +288,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
     }
 }
 
