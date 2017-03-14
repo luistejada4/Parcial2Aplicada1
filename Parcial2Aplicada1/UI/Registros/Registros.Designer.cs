@@ -562,6 +562,7 @@
             this.buttonGuardarEmpleadoEmail.TabIndex = 11;
             this.buttonGuardarEmpleadoEmail.Text = "guardar";
             this.buttonGuardarEmpleadoEmail.UseVisualStyleBackColor = true;
+            this.buttonGuardarEmpleadoEmail.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // buttonEliminarEmpleadoEmail
             // 

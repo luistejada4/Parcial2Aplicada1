@@ -109,6 +109,41 @@ namespace Parcial2Aplicada1.UI.Registros
                         }
                         break;
                     }
+                case 3:
+                    {
+                        switch (validation)
+                        {
+                            case 0:
+                                {
+                                    if (!Utils.NoWhiteNoSpace(textBoxEmpleadoEmailId.Text))
+                                    {
+                                        errorProvider.SetError(textBoxEmpleadoEmailId, "Invalido!");
+                                        errorCount++;
+                                    }
+                                    break;
+                                }
+                            case 1:
+                                {
+                                    if (!Utils.NoWhiteNoSpace(textBoxEmpleadoEmail.Text))
+                                    {
+                                        errorCount++;
+                                        errorProvider.SetError(textBoxEmpleadoEmail, "Invalido!");
+                                    }
+                                    if(!(comboBoxTipoEmailId.SelectedIndex >= 0))
+                                    {
+                                        errorCount++;
+                                        errorProvider.SetError(comboBoxTipoEmailId, "Invalido!");
+                                    }
+                                    if (!(comboBoxEmpleadosId.SelectedIndex >= 0))
+                                    {
+                                        errorCount++;
+                                        errorProvider.SetError(comboBoxEmpleadosId, "Invalido!");
+                                    }
+                                    break;
+                                }
+                        }
+                        break;
+                    }
 
             }
             if (errorCount == 0) return true;
@@ -143,6 +178,13 @@ namespace Parcial2Aplicada1.UI.Registros
                     {
                         textBoxTipoEmailId.Clear();
                         textBoxTipoEmailDescripcion.Clear();
+                        errorProvider.Clear();
+                        break;
+                    }
+                case 3:
+                    {
+                        textBoxEmpleadoEmailId.Clear();
+                        textBoxEmpleadoEmail.Clear();
                         errorProvider.Clear();
                         break;
                     }
@@ -206,6 +248,25 @@ namespace Parcial2Aplicada1.UI.Registros
                             else
                             {
                                 MessageBox.Show("No se guardo el tipo de email!");
+                            }
+                        }
+                        break;
+                    }
+                case 3:
+                    {
+                        if (Validar(1))
+                        {
+                            int id;
+                            int.TryParse(textBoxEmpleadoEmailId.Text, out id);
+                            EmpleadoEmail empleadoEmail = new EmpleadoEmail(id, Convert.ToInt32(comboBoxEmpleadosId.SelectedValue), Convert.ToInt32(comboBoxTipoEmailId.SelectedValue), textBoxEmpleadoEmail.Text);
+                            if (BLL.EmpleadosEmailsBLL.Guardar(empleadoEmail))
+                            {
+                                MessageBox.Show("Se guardo el email!");
+                                textBoxEmpleadoEmailId.Text = BLL.EmpleadosEmailsBLL.empleadoEmailReturn.EmpleadoEmailId.ToString();
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se guardo el email!");
                             }
                         }
                         break;
@@ -366,7 +427,6 @@ namespace Parcial2Aplicada1.UI.Registros
                 comboBoxTipoEmailId.DataSource = BLL.TiposEmailsBLL.GetList();
                 comboBoxTipoEmailId.DisplayMember = "Descripcion";
                 comboBoxTipoEmailId.ValueMember = "TipoEmailId";
-                dataGridView1.DataSource = BLL.TiposEmailsBLL.GetList();
 
             }
         }
