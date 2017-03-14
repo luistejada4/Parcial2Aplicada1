@@ -392,6 +392,25 @@ namespace Parcial2Aplicada1.UI.Registros
                         }
                         break;
                     }
+                case 3:
+                    {
+                        if (Validar(0))
+                        {
+
+                            if (BLL.EmpleadosEmailsBLL.Buscar(int.Parse(textBoxEmpleadoEmailId.Text)))
+                            {
+                                comboBoxEmpleadosId.SelectedValue = BLL.EmpleadosEmailsBLL.empleadoEmailReturn.EmpleadoId;
+                               comboBoxTipoEmailId.SelectedValue = BLL.EmpleadosEmailsBLL.empleadoEmailReturn.TipoId;
+                                textBoxEmpleadoEmail.Text = BLL.EmpleadosEmailsBLL.empleadoEmailReturn.Email;
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se encuentra una email con ese Id!");
+                            }
+                        }
+                        break;
+
+                    }
                 case 4:
                     {
                         if (Validar(0))
@@ -410,25 +429,6 @@ namespace Parcial2Aplicada1.UI.Registros
                         break;
 
                     }
-                    {
-                        if (Validar(0))
-                        {
-
-                            if (BLL.EmpleadosEmailsBLL.Buscar(int.Parse(textBoxEmpleadoEmailId.Text)))
-                            {
-                                comboBoxEmpleadosId.SelectedValue = BLL.EmpleadosEmailsBLL.empleadoEmailReturn.EmpleadoId;
-                                comboBoxTipoEmailId.SelectedValue = BLL.EmpleadosEmailsBLL.empleadoEmailReturn.TipoId;
-                                textBoxEmpleadoEmail.Text = BLL.EmpleadosEmailsBLL.empleadoEmailReturn.Email;
-                            }
-                            else
-                            {
-                                MessageBox.Show("No se encuentra un email con ese Id!");
-                            }
-                        }
-                        break;
-                    }
-
-
             }
 
         }
