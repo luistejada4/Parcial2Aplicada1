@@ -334,6 +334,24 @@ namespace Parcial2Aplicada1.UI.Registros
                         }
                         break;
                     }
+                case 3:
+                    {
+                        if (Validar(0))
+                        {
+
+                            if (BLL.EmpleadosEmailsBLL.Buscar(int.Parse(textBoxEmpleadoEmailId.Text)))
+                            {
+                                comboBoxEmpleadosId.SelectedValue = BLL.EmpleadosEmailsBLL.empleadoEmailReturn.EmpleadoId;
+                                comboBoxTipoEmailId.SelectedValue = BLL.EmpleadosEmailsBLL.empleadoEmailReturn.TipoId;
+                                textBoxEmpleadoEmail.Text = BLL.EmpleadosEmailsBLL.empleadoEmailReturn.Email;
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se encuentra un email con ese Id!");
+                            }
+                        }
+                        break;
+                    }
 
             }
 
@@ -403,6 +421,26 @@ namespace Parcial2Aplicada1.UI.Registros
                             else
                             {
                                 MessageBox.Show("Este tipo de Email no existe!");
+                            }
+                        }
+                        break;
+                    }
+                case 3:
+                    {
+                        if (Validar(0))
+                        {
+
+
+                            int id = int.Parse(textBoxEmpleadoEmailId.Text);
+                            if (BLL.EmpleadosEmailsBLL.Buscar(id))
+                            {
+                                BLL.EmpleadosEmailsBLL.Eliminar(id);
+                                MessageBox.Show("email eliminado");
+                                Limpiar();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Este Email no existe!");
                             }
                         }
                         break;

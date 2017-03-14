@@ -572,6 +572,7 @@
             this.buttonEliminarEmpleadoEmail.TabIndex = 12;
             this.buttonEliminarEmpleadoEmail.Text = "eliminar";
             this.buttonEliminarEmpleadoEmail.UseVisualStyleBackColor = true;
+            this.buttonEliminarEmpleadoEmail.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
             // Registros
             // 
