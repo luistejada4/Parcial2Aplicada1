@@ -82,6 +82,7 @@
     <Compile Include="DAL\Repositorio.cs" />
     <Compile Include="Entidades\Empleado.cs" />
     <Compile Include="Entidades\EmpleadoEmail.cs" />
+    <Compile Include="Entidades\EmpleadoEmailDetalle.cs" />
     <Compile Include="Entidades\EmpleadoRetencion.cs" />
     <Compile Include="Entidades\Retencion.cs" />
     <Compile Include="Entidades\TipoEmail.cs" />
