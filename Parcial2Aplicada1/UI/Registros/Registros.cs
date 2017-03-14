@@ -162,12 +162,12 @@ namespace Parcial2Aplicada1.UI.Registros
                                     if (!(comboBoxEmpleadoRetencionEmpleadoId.SelectedIndex >= 0))
                                     {
                                         errorCount++;
-                                        errorProvider.SetError(comboBoxTipoEmailId, "Invalido!");
+                                        errorProvider.SetError(comboBoxEmpleadoRetencionEmpleadoId, "Invalido!");
                                     }
                                     if (!(comboBoxEmpleadoRetencionRetencionId.SelectedIndex >= 0))
                                     {
                                         errorCount++;
-                                        errorProvider.SetError(comboBoxTipoEmailId, "Invalido!");
+                                        errorProvider.SetError(comboBoxEmpleadoRetencionRetencionId, "Invalido!");
                                     }
                                     break;
                                 }
@@ -320,12 +320,12 @@ namespace Parcial2Aplicada1.UI.Registros
                             EmpleadoRetencion empleadoRetencion = new EmpleadoRetencion(id, Convert.ToInt32(comboBoxEmpleadoRetencionEmpleadoId.SelectedValue), Convert.ToInt32(comboBoxEmpleadoRetencionRetencionId.SelectedValue));
                             if (BLL.EmpleadosRetencionesBLL.Guardar(empleadoRetencion))
                             {
-                                MessageBox.Show("Se guardo el email!");
-                                textBoxEmpleadoEmailId.Text = BLL.EmpleadosEmailsBLL.empleadoEmailReturn.EmpleadoEmailId.ToString();
+                                MessageBox.Show("Se guardo la retencion en el empleado!");
+                                textBoxEmpleadoRetencionId.Text = BLL.EmpleadosRetencionesBLL.empleadoRetencionReturn.EmpleadoRetencionId.ToString();
                             }
                             else
                             {
-                                MessageBox.Show("No se guardo el email!");
+                                MessageBox.Show("No se guardo la retencion en el empleado!");
                             }
                         }
                         break;
@@ -392,7 +392,24 @@ namespace Parcial2Aplicada1.UI.Registros
                         }
                         break;
                     }
-                case 3:
+                case 4:
+                    {
+                        if (Validar(0))
+                        {
+
+                            if (BLL.EmpleadosRetencionesBLL.Buscar(int.Parse(textBoxEmpleadoRetencionId.Text)))
+                            {
+                                comboBoxEmpleadoRetencionEmpleadoId.SelectedValue = BLL.EmpleadosRetencionesBLL.empleadoRetencionReturn.EmpleadoId;
+                                comboBoxEmpleadoRetencionRetencionId.SelectedValue = BLL.EmpleadosRetencionesBLL.empleadoRetencionReturn.RetencionId;
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se encuentra una retencion de empleado con ese Id!");
+                            }
+                        }
+                        break;
+
+                    }
                     {
                         if (Validar(0))
                         {
@@ -410,6 +427,7 @@ namespace Parcial2Aplicada1.UI.Registros
                         }
                         break;
                     }
+
 
             }
 
@@ -503,6 +521,26 @@ namespace Parcial2Aplicada1.UI.Registros
                         }
                         break;
                     }
+                case 4:
+                    {
+                        if (Validar(0))
+                        {
+
+
+                            int id = int.Parse(textBoxEmpleadoRetencionId.Text);
+                            if (BLL.EmpleadosRetencionesBLL.Buscar(id))
+                            {
+                                BLL.EmpleadosRetencionesBLL.Eliminar(id);
+                                MessageBox.Show("email eliminado");
+                                Limpiar();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Este Email no existe!");
+                            }
+                        }
+                        break;
+                    }
             }
         }
 
@@ -525,17 +563,20 @@ namespace Parcial2Aplicada1.UI.Registros
                 comboBoxTipoEmailId.ValueMember = "TipoEmailId";
 
             }
-            if (tabControlRegistros.SelectedIndex == 4)
+            if(tabControlRegistros.SelectedIndex == 4)
             {
+
                 comboBoxEmpleadoRetencionEmpleadoId.DataSource = BLL.EmpleadosBLL.GetList();
                 comboBoxEmpleadoRetencionEmpleadoId.DisplayMember = "Nombre";
-                comboBoxEmpleadosId.ValueMember = "EmpleadoId";
+                comboBoxEmpleadoRetencionEmpleadoId.ValueMember = "EmpleadoId";
 
                 comboBoxEmpleadoRetencionRetencionId.DataSource = BLL.RetencionesBLL.GetList();
                 comboBoxEmpleadoRetencionRetencionId.DisplayMember = "Descripcion";
-                comboBoxTipoEmailId.ValueMember = "RetencionId";
+                comboBoxEmpleadoRetencionRetencionId.ValueMember = "RetencionId";
 
             }
+
+
         }
     }
    }

@@ -1,0 +1,1 @@
+﻿create table EmpleadosRetenciones(EmpleadoRetencionId int primary key identity(1,1), EmpleadoId int, RetencionId int);

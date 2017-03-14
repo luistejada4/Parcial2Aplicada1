@@ -31,7 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabPageEmpleadoRetencion = new System.Windows.Forms.TabPage();
+            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.buttonEliminar = new System.Windows.Forms.Button();
+            this.buttonGuardarEmpleadoRetencion = new System.Windows.Forms.Button();
+            this.buttonNuevo = new System.Windows.Forms.Button();
+            this.comboBoxEmpleadoRetencionEmpleadoId = new System.Windows.Forms.ComboBox();
+            this.comboBoxEmpleadoRetencionRetencionId = new System.Windows.Forms.ComboBox();
+            this.textBoxEmpleadoRetencionId = new System.Windows.Forms.TextBox();
             this.tabPageEmpleadoEmail = new System.Windows.Forms.TabPage();
+            this.buttonEliminarEmpleadoEmail = new System.Windows.Forms.Button();
+            this.buttonGuardarEmpleadoEmail = new System.Windows.Forms.Button();
+            this.buttonNuevoEmpleadoEmail = new System.Windows.Forms.Button();
             this.buttonBuscarEmpleadoEmail = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -75,16 +85,9 @@
             this.maskedTextBoxEmpleadoSueldo = new System.Windows.Forms.MaskedTextBox();
             this.textBoxEmpleadoNombre = new System.Windows.Forms.TextBox();
             this.tabControlRegistros = new System.Windows.Forms.TabControl();
-            this.buttonNuevoEmpleadoEmail = new System.Windows.Forms.Button();
-            this.buttonGuardarEmpleadoEmail = new System.Windows.Forms.Button();
-            this.buttonEliminarEmpleadoEmail = new System.Windows.Forms.Button();
-            this.textBoxEmpleadoRetencionId = new System.Windows.Forms.TextBox();
-            this.comboBoxEmpleadoRetencionRetencionId = new System.Windows.Forms.ComboBox();
-            this.comboBoxEmpleadoRetencionEmpleadoId = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.buttonGuardarEmpleadoRetencion = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Id = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.tabPageEmpleadoRetencion.SuspendLayout();
             this.tabPageEmpleadoEmail.SuspendLayout();
@@ -100,10 +103,13 @@
             // 
             // tabPageEmpleadoRetencion
             // 
-            this.tabPageEmpleadoRetencion.Controls.Add(this.button4);
-            this.tabPageEmpleadoRetencion.Controls.Add(this.button3);
+            this.tabPageEmpleadoRetencion.Controls.Add(this.label15);
+            this.tabPageEmpleadoRetencion.Controls.Add(this.label14);
+            this.tabPageEmpleadoRetencion.Controls.Add(this.Id);
+            this.tabPageEmpleadoRetencion.Controls.Add(this.buttonBuscar);
+            this.tabPageEmpleadoRetencion.Controls.Add(this.buttonEliminar);
             this.tabPageEmpleadoRetencion.Controls.Add(this.buttonGuardarEmpleadoRetencion);
-            this.tabPageEmpleadoRetencion.Controls.Add(this.button1);
+            this.tabPageEmpleadoRetencion.Controls.Add(this.buttonNuevo);
             this.tabPageEmpleadoRetencion.Controls.Add(this.comboBoxEmpleadoRetencionEmpleadoId);
             this.tabPageEmpleadoRetencion.Controls.Add(this.comboBoxEmpleadoRetencionRetencionId);
             this.tabPageEmpleadoRetencion.Controls.Add(this.textBoxEmpleadoRetencionId);
@@ -113,6 +119,77 @@
             this.tabPageEmpleadoRetencion.TabIndex = 3;
             this.tabPageEmpleadoRetencion.Text = "Empleado retencion";
             this.tabPageEmpleadoRetencion.UseVisualStyleBackColor = true;
+            // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.Location = new System.Drawing.Point(340, 50);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscar.TabIndex = 6;
+            this.buttonBuscar.Text = "buscar";
+            this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            // 
+            // buttonEliminar
+            // 
+            this.buttonEliminar.Location = new System.Drawing.Point(353, 148);
+            this.buttonEliminar.Name = "buttonEliminar";
+            this.buttonEliminar.Size = new System.Drawing.Size(75, 23);
+            this.buttonEliminar.TabIndex = 5;
+            this.buttonEliminar.Text = "eliminar";
+            this.buttonEliminar.UseVisualStyleBackColor = true;
+            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
+            // 
+            // buttonGuardarEmpleadoRetencion
+            // 
+            this.buttonGuardarEmpleadoRetencion.Location = new System.Drawing.Point(262, 148);
+            this.buttonGuardarEmpleadoRetencion.Name = "buttonGuardarEmpleadoRetencion";
+            this.buttonGuardarEmpleadoRetencion.Size = new System.Drawing.Size(75, 23);
+            this.buttonGuardarEmpleadoRetencion.TabIndex = 4;
+            this.buttonGuardarEmpleadoRetencion.Text = "guardar";
+            this.buttonGuardarEmpleadoRetencion.UseVisualStyleBackColor = true;
+            this.buttonGuardarEmpleadoRetencion.Click += new System.EventHandler(this.buttonGuardar_Click);
+            // 
+            // buttonNuevo
+            // 
+            this.buttonNuevo.Location = new System.Drawing.Point(174, 148);
+            this.buttonNuevo.Name = "buttonNuevo";
+            this.buttonNuevo.Size = new System.Drawing.Size(75, 23);
+            this.buttonNuevo.TabIndex = 3;
+            this.buttonNuevo.Text = "nuevo";
+            this.buttonNuevo.UseVisualStyleBackColor = true;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
+            // 
+            // comboBoxEmpleadoRetencionEmpleadoId
+            // 
+            this.comboBoxEmpleadoRetencionEmpleadoId.FormattingEnabled = true;
+            this.comboBoxEmpleadoRetencionEmpleadoId.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.comboBoxEmpleadoRetencionEmpleadoId.Location = new System.Drawing.Point(216, 78);
+            this.comboBoxEmpleadoRetencionEmpleadoId.Name = "comboBoxEmpleadoRetencionEmpleadoId";
+            this.comboBoxEmpleadoRetencionEmpleadoId.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEmpleadoRetencionEmpleadoId.TabIndex = 2;
+            // 
+            // comboBoxEmpleadoRetencionRetencionId
+            // 
+            this.comboBoxEmpleadoRetencionRetencionId.FormattingEnabled = true;
+            this.comboBoxEmpleadoRetencionRetencionId.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.comboBoxEmpleadoRetencionRetencionId.Location = new System.Drawing.Point(216, 105);
+            this.comboBoxEmpleadoRetencionRetencionId.Name = "comboBoxEmpleadoRetencionRetencionId";
+            this.comboBoxEmpleadoRetencionRetencionId.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEmpleadoRetencionRetencionId.TabIndex = 1;
+            // 
+            // textBoxEmpleadoRetencionId
+            // 
+            this.textBoxEmpleadoRetencionId.Location = new System.Drawing.Point(216, 52);
+            this.textBoxEmpleadoRetencionId.Name = "textBoxEmpleadoRetencionId";
+            this.textBoxEmpleadoRetencionId.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEmpleadoRetencionId.TabIndex = 0;
             // 
             // tabPageEmpleadoEmail
             // 
@@ -134,6 +211,36 @@
             this.tabPageEmpleadoEmail.TabIndex = 4;
             this.tabPageEmpleadoEmail.Text = "Empleado email";
             this.tabPageEmpleadoEmail.UseVisualStyleBackColor = true;
+            // 
+            // buttonEliminarEmpleadoEmail
+            // 
+            this.buttonEliminarEmpleadoEmail.Location = new System.Drawing.Point(367, 165);
+            this.buttonEliminarEmpleadoEmail.Name = "buttonEliminarEmpleadoEmail";
+            this.buttonEliminarEmpleadoEmail.Size = new System.Drawing.Size(75, 23);
+            this.buttonEliminarEmpleadoEmail.TabIndex = 12;
+            this.buttonEliminarEmpleadoEmail.Text = "eliminar";
+            this.buttonEliminarEmpleadoEmail.UseVisualStyleBackColor = true;
+            this.buttonEliminarEmpleadoEmail.Click += new System.EventHandler(this.buttonEliminar_Click);
+            // 
+            // buttonGuardarEmpleadoEmail
+            // 
+            this.buttonGuardarEmpleadoEmail.Location = new System.Drawing.Point(286, 165);
+            this.buttonGuardarEmpleadoEmail.Name = "buttonGuardarEmpleadoEmail";
+            this.buttonGuardarEmpleadoEmail.Size = new System.Drawing.Size(75, 23);
+            this.buttonGuardarEmpleadoEmail.TabIndex = 11;
+            this.buttonGuardarEmpleadoEmail.Text = "guardar";
+            this.buttonGuardarEmpleadoEmail.UseVisualStyleBackColor = true;
+            this.buttonGuardarEmpleadoEmail.Click += new System.EventHandler(this.buttonGuardar_Click);
+            // 
+            // buttonNuevoEmpleadoEmail
+            // 
+            this.buttonNuevoEmpleadoEmail.Location = new System.Drawing.Point(204, 165);
+            this.buttonNuevoEmpleadoEmail.Name = "buttonNuevoEmpleadoEmail";
+            this.buttonNuevoEmpleadoEmail.Size = new System.Drawing.Size(75, 23);
+            this.buttonNuevoEmpleadoEmail.TabIndex = 10;
+            this.buttonNuevoEmpleadoEmail.Text = "nuevo";
+            this.buttonNuevoEmpleadoEmail.UseVisualStyleBackColor = true;
+            this.buttonNuevoEmpleadoEmail.Click += new System.EventHandler(this.buttonNuevo_Click);
             // 
             // buttonBuscarEmpleadoEmail
             // 
@@ -559,95 +666,32 @@
             this.tabControlRegistros.TabIndex = 0;
             this.tabControlRegistros.SelectedIndexChanged += new System.EventHandler(this.tabControlRegistros_SelectedIndexChanged);
             // 
-            // buttonNuevoEmpleadoEmail
+            // Id
             // 
-            this.buttonNuevoEmpleadoEmail.Location = new System.Drawing.Point(204, 165);
-            this.buttonNuevoEmpleadoEmail.Name = "buttonNuevoEmpleadoEmail";
-            this.buttonNuevoEmpleadoEmail.Size = new System.Drawing.Size(75, 23);
-            this.buttonNuevoEmpleadoEmail.TabIndex = 10;
-            this.buttonNuevoEmpleadoEmail.Text = "nuevo";
-            this.buttonNuevoEmpleadoEmail.UseVisualStyleBackColor = true;
-            this.buttonNuevoEmpleadoEmail.Click += new System.EventHandler(this.buttonNuevo_Click);
+            this.Id.AutoSize = true;
+            this.Id.Location = new System.Drawing.Point(149, 59);
+            this.Id.Name = "Id";
+            this.Id.Size = new System.Drawing.Size(16, 13);
+            this.Id.TabIndex = 8;
+            this.Id.Text = "Id";
             // 
-            // buttonGuardarEmpleadoEmail
+            // label14
             // 
-            this.buttonGuardarEmpleadoEmail.Location = new System.Drawing.Point(286, 165);
-            this.buttonGuardarEmpleadoEmail.Name = "buttonGuardarEmpleadoEmail";
-            this.buttonGuardarEmpleadoEmail.Size = new System.Drawing.Size(75, 23);
-            this.buttonGuardarEmpleadoEmail.TabIndex = 11;
-            this.buttonGuardarEmpleadoEmail.Text = "guardar";
-            this.buttonGuardarEmpleadoEmail.UseVisualStyleBackColor = true;
-            this.buttonGuardarEmpleadoEmail.Click += new System.EventHandler(this.buttonGuardar_Click);
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(149, 81);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(53, 13);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "empleado";
             // 
-            // buttonEliminarEmpleadoEmail
+            // label15
             // 
-            this.buttonEliminarEmpleadoEmail.Location = new System.Drawing.Point(367, 165);
-            this.buttonEliminarEmpleadoEmail.Name = "buttonEliminarEmpleadoEmail";
-            this.buttonEliminarEmpleadoEmail.Size = new System.Drawing.Size(75, 23);
-            this.buttonEliminarEmpleadoEmail.TabIndex = 12;
-            this.buttonEliminarEmpleadoEmail.Text = "eliminar";
-            this.buttonEliminarEmpleadoEmail.UseVisualStyleBackColor = true;
-            this.buttonEliminarEmpleadoEmail.Click += new System.EventHandler(this.buttonEliminar_Click);
-            // 
-            // textBoxEmpleadoRetencionId
-            // 
-            this.textBoxEmpleadoRetencionId.Location = new System.Drawing.Point(216, 52);
-            this.textBoxEmpleadoRetencionId.Name = "textBoxEmpleadoRetencionId";
-            this.textBoxEmpleadoRetencionId.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEmpleadoRetencionId.TabIndex = 0;
-            // 
-            // comboBoxEmpleadoRetencionRetencionId
-            // 
-            this.comboBoxEmpleadoRetencionRetencionId.FormattingEnabled = true;
-            this.comboBoxEmpleadoRetencionRetencionId.Location = new System.Drawing.Point(216, 105);
-            this.comboBoxEmpleadoRetencionRetencionId.Name = "comboBoxEmpleadoRetencionRetencionId";
-            this.comboBoxEmpleadoRetencionRetencionId.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxEmpleadoRetencionRetencionId.TabIndex = 1;
-            // 
-            // comboBoxEmpleadoRetencionEmpleadoId
-            // 
-            this.comboBoxEmpleadoRetencionEmpleadoId.FormattingEnabled = true;
-            this.comboBoxEmpleadoRetencionEmpleadoId.Location = new System.Drawing.Point(216, 78);
-            this.comboBoxEmpleadoRetencionEmpleadoId.Name = "comboBoxEmpleadoRetencionEmpleadoId";
-            this.comboBoxEmpleadoRetencionEmpleadoId.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxEmpleadoRetencionEmpleadoId.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(174, 148);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // buttonGuardarEmpleadoRetencion
-            // 
-            this.buttonGuardarEmpleadoRetencion.Location = new System.Drawing.Point(262, 148);
-            this.buttonGuardarEmpleadoRetencion.Name = "buttonGuardarEmpleadoRetencion";
-            this.buttonGuardarEmpleadoRetencion.Size = new System.Drawing.Size(75, 23);
-            this.buttonGuardarEmpleadoRetencion.TabIndex = 4;
-            this.buttonGuardarEmpleadoRetencion.Text = "guardar";
-            this.buttonGuardarEmpleadoRetencion.UseVisualStyleBackColor = true;
-            this.buttonGuardarEmpleadoRetencion.Click += new System.EventHandler(this.buttonGuardar_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(353, 148);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(340, 50);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(161, 108);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(51, 13);
+            this.label15.TabIndex = 10;
+            this.label15.Text = "retencion";
             // 
             // Registros
             // 
@@ -727,9 +771,12 @@
         private System.Windows.Forms.ComboBox comboBoxEmpleadoRetencionEmpleadoId;
         private System.Windows.Forms.ComboBox comboBoxEmpleadoRetencionRetencionId;
         private System.Windows.Forms.TextBox textBoxEmpleadoRetencionId;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button buttonGuardarEmpleadoRetencion;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonNuevo;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label Id;
     }
 }
