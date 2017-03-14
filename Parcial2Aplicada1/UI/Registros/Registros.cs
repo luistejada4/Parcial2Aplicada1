@@ -144,6 +144,36 @@ namespace Parcial2Aplicada1.UI.Registros
                         }
                         break;
                     }
+                case 4:
+                    {
+                        switch (validation)
+                        {
+                            case 0:
+                                {
+                                    if (!Utils.NoWhiteNoSpace(textBoxEmpleadoRetencionId.Text))
+                                    {
+                                        errorProvider.SetError(textBoxEmpleadoRetencionId, "Invalido!");
+                                        errorCount++;
+                                    }
+                                    break;
+                                }
+                            case 1:
+                                {
+                                    if (!(comboBoxEmpleadoRetencionEmpleadoId.SelectedIndex >= 0))
+                                    {
+                                        errorCount++;
+                                        errorProvider.SetError(comboBoxTipoEmailId, "Invalido!");
+                                    }
+                                    if (!(comboBoxEmpleadoRetencionRetencionId.SelectedIndex >= 0))
+                                    {
+                                        errorCount++;
+                                        errorProvider.SetError(comboBoxTipoEmailId, "Invalido!");
+                                    }
+                                    break;
+                                }
+                        }
+                        break;
+                    }
 
             }
             if (errorCount == 0) return true;
@@ -184,7 +214,17 @@ namespace Parcial2Aplicada1.UI.Registros
                 case 3:
                     {
                         textBoxEmpleadoEmailId.Clear();
+                        comboBoxEmpleadosId.SelectedIndex = -1;
+                        comboBoxTipoEmailId.SelectedValue = -1;
                         textBoxEmpleadoEmail.Clear();
+                        errorProvider.Clear();
+                        break;
+                    }
+                case 4:
+                    {
+                        textBoxEmpleadoRetencionId.Clear();
+                        comboBoxEmpleadoRetencionEmpleadoId.SelectedIndex = -1;
+                        comboBoxEmpleadoRetencionRetencionId.SelectedValue = -1;
                         errorProvider.Clear();
                         break;
                     }
@@ -271,7 +311,25 @@ namespace Parcial2Aplicada1.UI.Registros
                         }
                         break;
                     }
-
+                case 4:
+                    {
+                        if (Validar(1))
+                        {
+                            int id;
+                            int.TryParse(textBoxEmpleadoRetencionId.Text, out id);
+                            EmpleadoRetencion empleadoRetencion = new EmpleadoRetencion(id, Convert.ToInt32(comboBoxEmpleadoRetencionEmpleadoId.SelectedValue), Convert.ToInt32(comboBoxEmpleadoRetencionRetencionId.SelectedValue));
+                            if (BLL.EmpleadosRetencionesBLL.Guardar(empleadoRetencion))
+                            {
+                                MessageBox.Show("Se guardo el email!");
+                                textBoxEmpleadoEmailId.Text = BLL.EmpleadosEmailsBLL.empleadoEmailReturn.EmpleadoEmailId.ToString();
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se guardo el email!");
+                            }
+                        }
+                        break;
+                    }
             }
 
         }
@@ -465,6 +523,17 @@ namespace Parcial2Aplicada1.UI.Registros
                 comboBoxTipoEmailId.DataSource = BLL.TiposEmailsBLL.GetList();
                 comboBoxTipoEmailId.DisplayMember = "Descripcion";
                 comboBoxTipoEmailId.ValueMember = "TipoEmailId";
+
+            }
+            if (tabControlRegistros.SelectedIndex == 4)
+            {
+                comboBoxEmpleadoRetencionEmpleadoId.DataSource = BLL.EmpleadosBLL.GetList();
+                comboBoxEmpleadoRetencionEmpleadoId.DisplayMember = "Nombre";
+                comboBoxEmpleadosId.ValueMember = "EmpleadoId";
+
+                comboBoxEmpleadoRetencionRetencionId.DataSource = BLL.RetencionesBLL.GetList();
+                comboBoxEmpleadoRetencionRetencionId.DisplayMember = "Descripcion";
+                comboBoxTipoEmailId.ValueMember = "RetencionId";
 
             }
         }

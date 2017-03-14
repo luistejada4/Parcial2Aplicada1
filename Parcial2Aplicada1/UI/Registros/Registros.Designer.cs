@@ -78,7 +78,15 @@
             this.buttonNuevoEmpleadoEmail = new System.Windows.Forms.Button();
             this.buttonGuardarEmpleadoEmail = new System.Windows.Forms.Button();
             this.buttonEliminarEmpleadoEmail = new System.Windows.Forms.Button();
+            this.textBoxEmpleadoRetencionId = new System.Windows.Forms.TextBox();
+            this.comboBoxEmpleadoRetencionRetencionId = new System.Windows.Forms.ComboBox();
+            this.comboBoxEmpleadoRetencionEmpleadoId = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buttonGuardarEmpleadoRetencion = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            this.tabPageEmpleadoRetencion.SuspendLayout();
             this.tabPageEmpleadoEmail.SuspendLayout();
             this.tabPageTiposEmail.SuspendLayout();
             this.tabPageRetencion.SuspendLayout();
@@ -92,6 +100,13 @@
             // 
             // tabPageEmpleadoRetencion
             // 
+            this.tabPageEmpleadoRetencion.Controls.Add(this.button4);
+            this.tabPageEmpleadoRetencion.Controls.Add(this.button3);
+            this.tabPageEmpleadoRetencion.Controls.Add(this.buttonGuardarEmpleadoRetencion);
+            this.tabPageEmpleadoRetencion.Controls.Add(this.button1);
+            this.tabPageEmpleadoRetencion.Controls.Add(this.comboBoxEmpleadoRetencionEmpleadoId);
+            this.tabPageEmpleadoRetencion.Controls.Add(this.comboBoxEmpleadoRetencionRetencionId);
+            this.tabPageEmpleadoRetencion.Controls.Add(this.textBoxEmpleadoRetencionId);
             this.tabPageEmpleadoRetencion.Location = new System.Drawing.Point(4, 22);
             this.tabPageEmpleadoRetencion.Name = "tabPageEmpleadoRetencion";
             this.tabPageEmpleadoRetencion.Size = new System.Drawing.Size(646, 319);
@@ -574,6 +589,66 @@
             this.buttonEliminarEmpleadoEmail.UseVisualStyleBackColor = true;
             this.buttonEliminarEmpleadoEmail.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
+            // textBoxEmpleadoRetencionId
+            // 
+            this.textBoxEmpleadoRetencionId.Location = new System.Drawing.Point(216, 52);
+            this.textBoxEmpleadoRetencionId.Name = "textBoxEmpleadoRetencionId";
+            this.textBoxEmpleadoRetencionId.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEmpleadoRetencionId.TabIndex = 0;
+            // 
+            // comboBoxEmpleadoRetencionRetencionId
+            // 
+            this.comboBoxEmpleadoRetencionRetencionId.FormattingEnabled = true;
+            this.comboBoxEmpleadoRetencionRetencionId.Location = new System.Drawing.Point(216, 105);
+            this.comboBoxEmpleadoRetencionRetencionId.Name = "comboBoxEmpleadoRetencionRetencionId";
+            this.comboBoxEmpleadoRetencionRetencionId.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEmpleadoRetencionRetencionId.TabIndex = 1;
+            // 
+            // comboBoxEmpleadoRetencionEmpleadoId
+            // 
+            this.comboBoxEmpleadoRetencionEmpleadoId.FormattingEnabled = true;
+            this.comboBoxEmpleadoRetencionEmpleadoId.Location = new System.Drawing.Point(216, 78);
+            this.comboBoxEmpleadoRetencionEmpleadoId.Name = "comboBoxEmpleadoRetencionEmpleadoId";
+            this.comboBoxEmpleadoRetencionEmpleadoId.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEmpleadoRetencionEmpleadoId.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(174, 148);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // buttonGuardarEmpleadoRetencion
+            // 
+            this.buttonGuardarEmpleadoRetencion.Location = new System.Drawing.Point(262, 148);
+            this.buttonGuardarEmpleadoRetencion.Name = "buttonGuardarEmpleadoRetencion";
+            this.buttonGuardarEmpleadoRetencion.Size = new System.Drawing.Size(75, 23);
+            this.buttonGuardarEmpleadoRetencion.TabIndex = 4;
+            this.buttonGuardarEmpleadoRetencion.Text = "guardar";
+            this.buttonGuardarEmpleadoRetencion.UseVisualStyleBackColor = true;
+            this.buttonGuardarEmpleadoRetencion.Click += new System.EventHandler(this.buttonGuardar_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(353, 148);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(340, 50);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // Registros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -584,6 +659,8 @@
             this.Text = "Registros";
             this.Load += new System.EventHandler(this.Registros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.tabPageEmpleadoRetencion.ResumeLayout(false);
+            this.tabPageEmpleadoRetencion.PerformLayout();
             this.tabPageEmpleadoEmail.ResumeLayout(false);
             this.tabPageEmpleadoEmail.PerformLayout();
             this.tabPageTiposEmail.ResumeLayout(false);
@@ -647,5 +724,12 @@
         private System.Windows.Forms.Button buttonEliminarEmpleadoEmail;
         private System.Windows.Forms.Button buttonGuardarEmpleadoEmail;
         private System.Windows.Forms.Button buttonNuevoEmpleadoEmail;
+        private System.Windows.Forms.ComboBox comboBoxEmpleadoRetencionEmpleadoId;
+        private System.Windows.Forms.ComboBox comboBoxEmpleadoRetencionRetencionId;
+        private System.Windows.Forms.TextBox textBoxEmpleadoRetencionId;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonGuardarEmpleadoRetencion;
+        private System.Windows.Forms.Button button1;
     }
 }

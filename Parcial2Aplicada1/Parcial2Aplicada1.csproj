@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="BLL\EmpleadosBLL.cs" />
     <Compile Include="BLL\EmpleadosEmailsBLL.cs" />
+    <Compile Include="BLL\EmpleadosRetenciones.cs" />
     <Compile Include="BLL\RetencionesBLL.cs" />
     <Compile Include="BLL\TiposEmailsBLL.cs" />
     <Compile Include="DAL\IRepository.cs" />

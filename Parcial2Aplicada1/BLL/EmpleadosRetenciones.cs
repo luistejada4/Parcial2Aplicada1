@@ -8,30 +8,30 @@ using System.Threading.Tasks;
 
 namespace Parcial2Aplicada1.BLL
 {
-    class RetencionesBLL
+    public class EmpleadosRetenciones
     {
-        public static Retencion retencionReturn = null;
+        public static EmpleadoRetencion empleadoRetencionReturn = null;
 
-        public static bool Guardar(Retencion retencion)
+        public static bool Guardar(EmpleadoRetencion empleadoRetencion)
         {
-            using (var db = new Repositorio<Retencion>())
+            using (var db = new Repositorio<EmpleadoRetencion>())
             {
-                if (Buscar(retencion.RetencionId) == false)
+                if (Buscar(empleadoRetencion.EmpleadoRetencionId) == false)
                 {
-                    if (db.Guardar(retencion) != null)
+                    if (db.Guardar(empleadoRetencion) != null)
                     {
-                        retencionReturn = retencion;
+                        empleadoRetencionReturn = empleadoRetencion;
                         return true;
                     }
                     else
                     {
-                        retencionReturn = null;
+                        empleadoRetencionReturn = null;
                         return false;
                     }
                 }
                 else
                 {
-                    db.Modificar(retencion);
+                    db.Modificar(empleadoRetencion);
                     return true;
                 }
 
@@ -39,9 +39,9 @@ namespace Parcial2Aplicada1.BLL
         }
         public static bool Buscar(int id)
         {
-            using (var db = new Repositorio<Retencion>())
+            using (var db = new Repositorio<EmpleadoRetencion>())
             {
-                if ((retencionReturn = db.Buscar(e => e.RetencionId == id)) != null)
+                if ((empleadoRetencionReturn = db.Buscar(e => e.EmpleadoRetencionId == id)) != null)
                 {
                     return true;
                 }
@@ -53,11 +53,11 @@ namespace Parcial2Aplicada1.BLL
         }
         public static bool Eliminar(int id)
         {
-            using (var db = new Repositorio<Retencion>())
+            using (var db = new Repositorio<EmpleadoRetencion>())
             {
                 if (Buscar(id))
                 {
-                    if (db.Eliminar(retencionReturn))
+                    if (db.Eliminar(empleadoRetencionReturn))
                     {
                         return true;
                     }
@@ -68,15 +68,15 @@ namespace Parcial2Aplicada1.BLL
                 }
                 else
                 {
-                    retencionReturn = null;
+                    empleadoRetencionReturn = null;
                     return false;
                 }
 
             }
         }
-        public static List<Retencion> GetList()
+        public static List<EmpleadoRetencion> GetList()
         {
-            using (var db = new Repositorio<Retencion>())
+            using (var db = new Repositorio<EmpleadoRetencion>())
             {
                 return db.GetList();
             }
