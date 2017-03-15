@@ -71,5 +71,10 @@ namespace Parcial2Aplicada1
                 MessageBox.Show("Este empleado no existe!");
             }
         }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new UI.Consulta.ConsultaEmpleados().Show();
+        }
     }
 }

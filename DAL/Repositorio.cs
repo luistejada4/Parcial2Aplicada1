@@ -31,7 +31,7 @@ namespace Parcial2Aplicada1.DAL
             {
                 result = EntitySet.FirstOrDefault(criterio);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
