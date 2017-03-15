@@ -72,25 +72,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\EmpleadosBLL.cs" />
-    <Compile Include="BLL\EmpleadosEmailsBLL.cs" />
-    <Compile Include="BLL\EmpleadosRetencionesBLL.cs" />
-    <Compile Include="BLL\RetencionesBLL.cs" />
-    <Compile Include="BLL\TiposEmailsBLL.cs" />
-    <Compile Include="DAL\IRepository.cs" />
-    <Compile Include="DAL\Parcial2DB.cs" />
-    <Compile Include="DAL\Repositorio.cs" />
-    <Compile Include="Entidades\Empleado.cs" />
-    <Compile Include="Entidades\EmpleadoEmail.cs" />
-    <Compile Include="Entidades\EmpleadoEmailDetalle.cs" />
-    <Compile Include="Entidades\EmpleadoRetencion.cs" />
-    <Compile Include="Entidades\Retencion.cs" />
-    <Compile Include="Entidades\TipoEmail.cs" />
-    <Compile Include="Parcial2DBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Parcial2DBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="UI\Consulta\ConsultaEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,17 +112,6 @@
       <DependentUpon>Registros.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Parcial2DBDataSet.xsc">
-      <DependentUpon>Parcial2DBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Parcial2DBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Parcial2DBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Parcial2DBDataSet.xss">
-      <DependentUpon>Parcial2DBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -155,7 +125,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{ac02c153-3e5f-4238-83bb-97c0003dc4e6}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{cc7ce408-e850-4b46-adb4-a86d05617ab9}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\Parcial2DB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

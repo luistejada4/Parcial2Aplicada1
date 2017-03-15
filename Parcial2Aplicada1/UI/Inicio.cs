@@ -1,4 +1,5 @@
 ﻿using Parcial2Aplicada1.Entidades;
+using Parcial2Aplicada1.BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
